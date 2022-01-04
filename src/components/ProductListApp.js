@@ -32,7 +32,6 @@ const ProdutListApp = () => {
     };
     setInput("");
     setProductsDetail([...productsDetail, newProduct]);
-    console.log(productsDetail);
   };
 
   const updateGroupHandler = (e) => {
