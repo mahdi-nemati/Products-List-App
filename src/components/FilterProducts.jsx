@@ -4,7 +4,12 @@ const FilterProducts = ({ productsDetail, group }) => {
   const [selectCategory, setSelectCategory] = useState([]);
   const [showCatg, setShowCatg] = useState([]);
   useEffect(() => {
-    setShowCatg(productsDetail.filter((p) => p.group === selectCategory));
+    setShowCatg(
+      productsDetail.filter(
+        (p) =>
+          p.group === selectCategory && p.group !== "select" && p.name !== ""
+      )
+    );
   }, [selectCategory, productsDetail]);
 
   const renderProducts = () => {

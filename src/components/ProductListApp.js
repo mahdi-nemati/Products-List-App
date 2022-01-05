@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import FilterProducts from "./FilterProducts";
 import NewGroup from "./NewGroup";
 import NewProduct from "./NewProduct";
-
+import Swal from "sweetalert2";
 const ProdutListApp = () => {
   // product info state
-  const [productsDetail, setProductsDetail] = useState([]);
+  const [productsDetail, setProductsDetail] = useState([{}]);
   //    group state
   const [group, setGroup] = useState([
     { title: "select" },
@@ -25,14 +25,37 @@ const ProdutListApp = () => {
   const groupHandler = (e) => {
     setSelectedGroup(e.target.value);
   };
+  useEffect(() => {
+    const lastValue = productsDetail[productsDetail.length - 1];
+    if (lastValue.name === "") {
+      Swal.fire({
+        position: "top-end",
+        icon: "warning",
+        title: "please enter something",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    } else if (lastValue.group === "select" || lastValue.group === "") {
+      Swal.fire({
+        position: "top-end",
+        icon: "warning",
+        title: "please select group",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    } else {
+      localStorage.setItem(lastValue.group, lastValue.name);
+    }
+  }, [productsDetail]);
+
   const submitHandler = (e) => {
     e.preventDefault();
     const newProduct = {
+      id: Math.floor(Math.random() * 1000),
       name: input,
       group: selectedGroup,
     };
     setInput("");
-    setSelectedGroup("");
     setProductsDetail([...productsDetail, newProduct]);
   };
 
@@ -41,8 +64,18 @@ const ProdutListApp = () => {
   };
   const submitUpdateGroup = (e) => {
     e.preventDefault();
-    setGroup([...group, { title: newGroup }]);
-   
+    if (newGroup === "") {
+      Swal.fire({
+        position: "top-end",
+        icon: "warning",
+        title: "please enter something",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    } else {
+      setGroup([...group, { title: newGroup }]);
+      setNewGroup("");
+    }
   };
   return (
     <section>

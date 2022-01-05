@@ -4,6 +4,7 @@ const NewProduct = ({
   input,
   group,
   groupHandler,
+  errorHandler,
 }) => {
   return (
     <form onSubmit={submitHandler}>
@@ -13,7 +14,9 @@ const NewProduct = ({
           <option key={g.title}>{g.title}</option>
         ))}
       </select>
-      <button type="submit">Add</button>
+      <button type="submit" onClick={errorHandler}>
+        Add
+      </button>
     </form>
   );
 };
