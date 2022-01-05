@@ -8,6 +8,7 @@ const ProdutListApp = () => {
   const [productsDetail, setProductsDetail] = useState([]);
   //    group state
   const [group, setGroup] = useState([
+    { title: "select" },
     { title: "خوشکبار" },
     { title: "لبنیات" },
     { title: "پروتیین" },
@@ -31,6 +32,7 @@ const ProdutListApp = () => {
       group: selectedGroup,
     };
     setInput("");
+    setSelectedGroup("");
     setProductsDetail([...productsDetail, newProduct]);
   };
 
@@ -40,7 +42,7 @@ const ProdutListApp = () => {
   const submitUpdateGroup = (e) => {
     e.preventDefault();
     setGroup([...group, { title: newGroup }]);
-    setNewGroup("");
+   
   };
   return (
     <section>
