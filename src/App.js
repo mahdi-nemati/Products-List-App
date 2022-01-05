@@ -1,6 +1,5 @@
 import "./App.css";
 import ProdutListApp from "./components/ProductListApp";
-
 function App() {
   return (
     <div>

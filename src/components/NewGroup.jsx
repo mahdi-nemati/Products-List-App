@@ -1,10 +1,17 @@
 const NewGroup = ({ submitUpdateGroup, updateGroupHandler, newGroup }) => {
   return (
-    <form onSubmit={submitUpdateGroup}>
-      <h2>Add group</h2>
-      <input type="text" onChange={updateGroupHandler} value={newGroup} />
-      <button type="submit">Add</button>
-    </form>
+    <section>
+      <h2 className="title">Add new group</h2>
+      <form onSubmit={submitUpdateGroup} className="addGForm">
+        <input
+          type="text"
+          onChange={updateGroupHandler}
+          value={newGroup}
+          placeholder="Add group..."
+        />
+        <button type="submit">Add</button>
+      </form>
+    </section>
   );
 };
 

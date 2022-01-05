@@ -1,13 +1,91 @@
 html {
   font-size: 62.5%;
 }
-.nav {
-  display: flex;
-  justify-content: space-around;
-  background-color: cadetblue;
-  padding: 20px;
-  font-size: 1.8rem;
+/*  add new product section */
+.container {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 }
-.activeClass{
-  color: rgb(240, 113, 113);
+.addProForm {
+  display: flex;
+  flex-direction: column;
+}
+.addProForm button,
+.addGForm button {
+  margin-top: 1rem;
+  border: 2px solid #ddd;
+  outline: none;
+  background-color: #7c3aed;
+  padding: 0.5rem 0;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.6rem;
+}
+.addProForm input,
+.addGForm input {
+  border: 1px solid #7c3aed;
+  margin-right: 1.5rem;
+  margin-left: 0.3rem;
+  padding: 0.2rem 1.5rem;
+  border-radius: 2px;
+  outline: none;
+  font-size: 1.6rem;
+}
+.addProForm input:focus,
+.addProForm select:focus,
+.addGForm input:focus,
+.showProCon select:focus {
+  border: 2px solid #7c3aed;
+}
+.addProForm select , .showProCon select {
+  border: 1px solid #7c3aed;
+  padding: 0.2rem 1.5rem;
+  outline: none;
+  border-radius: 2px;
+  font-size: 1.6rem;
+}
+/* Add new group section */
+.addGForm {
+  display: flex;
+  flex-direction: column;
+}
+.showProCon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+}
+.remain{
+  margin-top: 1rem;
+  font-size: 1.4rem;
+}
+.list li{
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  width: 250px;
+  font-size: 1.6rem;
+  background: #a78bfa;
+  padding: 0.7rem 1rem;
+  border-radius: 5px;
+}
+.list li span{
+  background-color: #7c3aed;
+  color: #fff;
+  font-size: 1.6rem;
+  padding: 0.3rem 1.2rem;
+  border-radius: 5px;
+}
+.title{
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+  color: #4c1d95;
+}
+body{
+  background-color: #ddd6fe;
+  padding: 0 1rem;
 }

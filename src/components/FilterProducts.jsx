@@ -13,26 +13,32 @@ const FilterProducts = ({ productsDetail, group }) => {
   }, [selectCategory, productsDetail]);
 
   const renderProducts = () => {
-    if (showCatg.length === 0) return <p>there is no product here</p>;
+    if (showCatg.length === 0)
+      return <p className="remain">there is no product here</p>;
     else {
       return (
-        <ul>
+        <ul className="container list">
           {showCatg.map((s) => (
-            <li key={s.name}>{s.name}</li>
+            <li key={s.name}>
+              <p>{s.name}</p>
+              <span>{s.group}</span>
+            </li>
           ))}
         </ul>
       );
     }
   };
   return (
-    <section>
-      <h2>Filter Products</h2>
-      <select onChange={(e) => setSelectCategory(e.target.value)}>
-        {group.map((g) => (
-          <option key={g.title}>{g.title}</option>
-        ))}
-      </select>
-      {renderProducts()}
+    <section className="container">
+      <h2 className="title">Added Products</h2>
+      <div className="showProCon">
+        <select onChange={(e) => setSelectCategory(e.target.value)}>
+          {group.map((g) => (
+            <option key={g.title}>{g.title}</option>
+          ))}
+        </select>
+        {renderProducts()}
+      </div>
     </section>
   );
 };
