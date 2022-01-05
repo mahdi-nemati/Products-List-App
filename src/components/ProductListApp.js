@@ -9,9 +9,9 @@ const ProdutListApp = () => {
   //    group state
   const [group, setGroup] = useState([
     { title: "select" },
-    { title: "خوشکبار" },
+    { title: "خشکبار" },
     { title: "لبنیات" },
-    { title: "پروتیین" },
+    { title: "شوینده" },
   ]);
   // help state :)
   const [input, setInput] = useState("");
