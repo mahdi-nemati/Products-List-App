@@ -78,19 +78,21 @@ const ProdutListApp = () => {
     }
   };
   return (
-    <section>
-      <NewProduct
-        submitHandler={submitHandler}
-        groupHandler={groupHandler}
-        nameHandler={nameHandler}
-        group={group}
-        input={input}
-      />
-      <NewGroup
-        submitUpdateGroup={submitUpdateGroup}
-        updateGroupHandler={updateGroupHandler}
-        newGroup={newGroup}
-      />
+    <section className="allCon">
+      <div className="formsCon">
+        <NewProduct
+          submitHandler={submitHandler}
+          groupHandler={groupHandler}
+          nameHandler={nameHandler}
+          group={group}
+          input={input}
+        />
+        <NewGroup
+          submitUpdateGroup={submitUpdateGroup}
+          updateGroupHandler={updateGroupHandler}
+          newGroup={newGroup}
+        />
+      </div>
       <FilterProducts productsDetail={productsDetail} group={group} />
     </section>
   );

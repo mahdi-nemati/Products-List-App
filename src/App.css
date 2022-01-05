@@ -38,7 +38,8 @@ html {
 .showProCon select:focus {
   border: 2px solid #7c3aed;
 }
-.addProForm select , .showProCon select {
+.addProForm select,
+.showProCon select {
   border: 1px solid #7c3aed;
   padding: 0.2rem 1.5rem;
   outline: none;
@@ -56,11 +57,11 @@ html {
   align-items: center;
   margin-top: 1rem;
 }
-.remain{
+.remain {
   margin-top: 1rem;
   font-size: 1.4rem;
 }
-.list li{
+.list li {
   margin-bottom: 1rem;
   display: flex;
   flex-direction: row-reverse;
@@ -71,21 +72,53 @@ html {
   padding: 0.7rem 1rem;
   border-radius: 5px;
 }
-.list li span{
+.list li span {
   background-color: #7c3aed;
   color: #fff;
   font-size: 1.6rem;
   padding: 0.3rem 1.2rem;
   border-radius: 5px;
 }
-.title{
+.title {
   font-size: 1.8rem;
   margin-bottom: 1.5rem;
   display: flex;
   justify-content: center;
   color: #4c1d95;
 }
-body{
+body {
   background-color: #ddd6fe;
   padding: 0 1rem;
+}
+@media only screen and (min-width: 1024px) {
+  .allCon {
+    display: flex;
+    flex-direction: column;
+  }
+  .formsCon {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 3rem;
+  }
+  .list li {
+    width: 600px;
+  }
+  .addProForm button,
+  .addGForm button,
+  .addProForm input,
+  .addGForm input,
+  .addProForm select,
+  .showProCon select,
+  .list li,
+  .list li span{
+    font-size: 2rem;
+  } 
+  .title{
+    font-size: 2rem;
+  }
+  .remain{
+    font-size: 1.6rem;
+  }
 }
