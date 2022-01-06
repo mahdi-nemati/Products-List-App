@@ -8,7 +8,7 @@ const ProdutListApp = () => {
   const [productsDetail, setProductsDetail] = useState([{}]);
   //    group state
   const [group, setGroup] = useState([
-    { title: "select" },
+    { title: "All" },
     { title: "خشکبار" },
     { title: "لبنیات" },
     { title: "شوینده" },
@@ -35,7 +35,7 @@ const ProdutListApp = () => {
         showConfirmButton: false,
         timer: 1500,
       });
-    } else if (lastValue.group === "select" || lastValue.group === "") {
+    } else if (lastValue.group === "All" || lastValue.group === "") {
       Swal.fire({
         position: "top-end",
         icon: "warning",

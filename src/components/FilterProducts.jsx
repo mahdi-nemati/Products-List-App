@@ -4,15 +4,23 @@ const FilterProducts = ({ productsDetail, group }) => {
   const [selectCategory, setSelectCategory] = useState([]);
   const [showCatg, setShowCatg] = useState([]);
   useEffect(() => {
-    setShowCatg(
-      productsDetail.filter(
-        (p) =>
-          p.group === selectCategory && p.group !== "select" && p.name !== ""
-      )
-    );
+    // const lastValue = productsDetail[productsDetail.length - 1]
+    //  console.log(lastValue)
+
+    if (selectCategory === "All" || selectCategory.length === 0) {
+      setShowCatg(productsDetail.filter((p) => p.name && p.group !== "All" && p.group));
+    } else {
+      setShowCatg(
+        productsDetail.filter(
+          (p) =>
+            p.group === selectCategory && p.group !== "All" && p.name !== ""
+        )
+      );
+    }
   }, [selectCategory, productsDetail]);
 
   const renderProducts = () => {
+    // const lastValue = productsDetail[productsDetail.length - 1];
     if (showCatg.length === 0)
       return <p className="remain">there is no product here</p>;
     else {
