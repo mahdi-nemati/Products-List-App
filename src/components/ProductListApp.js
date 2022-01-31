@@ -78,8 +78,12 @@ const ProdutListApp = () => {
     }
   };
   return (
-    <section className="allCon">
-      <div className="formsCon">
+    <main class="flex flex-col items-cent items-center ">
+      <h1 
+      class="mb-14 mt-3 text-lg text-orange-800 sm:text-xl md:text-2xl">
+        Product List App
+        </h1>
+      <section class="mb-8 w-full flex flex-col items-center">
         <NewProduct
           submitHandler={submitHandler}
           groupHandler={groupHandler}
@@ -92,9 +96,11 @@ const ProdutListApp = () => {
           updateGroupHandler={updateGroupHandler}
           newGroup={newGroup}
         />
-      </div>
-      <FilterProducts productsDetail={productsDetail} group={group} />
-    </section>
+      </section>
+      <section>
+        <FilterProducts productsDetail={productsDetail} group={group} />
+      </section>
+    </main>
   );
 };
 

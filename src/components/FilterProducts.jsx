@@ -8,7 +8,9 @@ const FilterProducts = ({ productsDetail, group }) => {
     //  console.log(lastValue)
 
     if (selectCategory === "All" || selectCategory.length === 0) {
-      setShowCatg(productsDetail.filter((p) => p.name && p.group !== "All" && p.group));
+      setShowCatg(
+        productsDetail.filter((p) => p.name && p.group !== "All" && p.group)
+      );
     } else {
       setShowCatg(
         productsDetail.filter(
@@ -21,11 +23,10 @@ const FilterProducts = ({ productsDetail, group }) => {
 
   const renderProducts = () => {
     // const lastValue = productsDetail[productsDetail.length - 1];
-    if (showCatg.length === 0)
-      return <p className="remain">there is no product here</p>;
+    if (showCatg.length === 0) return <p>there is no product here</p>;
     else {
       return (
-        <ul className="container list">
+        <ul>
           {showCatg.map((s) => (
             <li key={s.name}>
               <p>{s.name}</p>
@@ -37,9 +38,9 @@ const FilterProducts = ({ productsDetail, group }) => {
     }
   };
   return (
-    <section className="container">
-      <h2 className="title">Added Products</h2>
-      <div className="showProCon">
+    <section>
+      <h2>Added Products</h2>
+      <div>
         <select onChange={(e) => setSelectCategory(e.target.value)}>
           {group.map((g) => (
             <option key={g.title}>{g.title}</option>
