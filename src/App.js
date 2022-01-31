@@ -1,10 +1,13 @@
 import "./App.css";
 import ProdutListApp from "./components/ProductListApp";
+import { ToastProvider } from "react-toast-notifications";
 function App() {
   return (
-    <div>
-      <ProdutListApp />
-    </div>
+    <ToastProvider>
+      <div>
+        <ProdutListApp />
+      </div>
+    </ToastProvider>
   );
 }
 

@@ -3,6 +3,7 @@ import FilterProducts from "./FilterProducts";
 import NewGroup from "./NewGroup";
 import NewProduct from "./NewProduct";
 import Swal from "sweetalert2";
+import { useToasts } from "react-toast-notifications";
 const ProdutListApp = () => {
   // product info state
   const [productsDetail, setProductsDetail] = useState([{}]);
@@ -62,6 +63,7 @@ const ProdutListApp = () => {
   const updateGroupHandler = (e) => {
     setNewGroup(e.target.value);
   };
+  const { addToast } = useToasts();
   const submitUpdateGroup = (e) => {
     e.preventDefault();
     if (newGroup === "") {
@@ -75,6 +77,10 @@ const ProdutListApp = () => {
     } else {
       setGroup([...group, { title: newGroup }]);
       setNewGroup("");
+      addToast(`added to groups`, {
+        appearance: "success",
+        autoDismiss: true,
+      });
     }
   };
   return (
