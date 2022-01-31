@@ -79,7 +79,7 @@ const ProdutListApp = () => {
   };
   return (
     <main class="flex flex-col items-cent items-center ">
-      <h1 class="mb-14 mt-3 text-lg text-orange-800 sm:text-xl md:text-2xl">
+      <h1 class="mb-14 mt-3 text-lg text-orange-800 sm:text-xl md:text-2xl lg:text-3xl lg:mt-5">
         Product List App
       </h1>
       <section class="w-full lg:flex">

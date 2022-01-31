@@ -1,6 +1,6 @@
 const NewGroup = ({ submitUpdateGroup, updateGroupHandler, newGroup }) => {
   return (
-    <section class="flex flex-col mb-6 items-center w-full md:w-11/12">
+    <section class="flex flex-col mb-6 items-center w-full md:w-11/12 lg:mt-10">
       <h2 class="text-base text-orange-600 mb-2 sm:text-lg md:text-xl lg:text-2xl">
         Add new group
       </h2>
