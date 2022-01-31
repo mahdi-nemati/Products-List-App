@@ -22,7 +22,7 @@ const NewProduct = ({
             value={input}
             placeholder="Product Name"
             class="outline-none border border-orange-500 rounded-md pl-1 
-            caret-orange-600  focus:border-2 w-9/12 sm:w-10/12 sm:mr-2"
+            caret-orange-600  focus:border-2 w-9/12 sm:w-10/12 sm:mr-2 lg:w-8/12"
           />
           <select
             onChange={groupHandler}
